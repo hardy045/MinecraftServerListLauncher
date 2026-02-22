@@ -1,0 +1,66 @@
+{
+  "name": "mcserverlistlauncer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "release": "electron-builder --publish always",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.mcserverlist.launcher",
+    "productName": "MCServerList Launcher",
+    "asar": true,
+    "afterPack": "scripts/prune-electron-runtime.js",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MCServerList Launcher",
+      "artifactName": "MCServerList-Setup-${version}.exe"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "src/assets/icon.png"
+    },
+    "protocols": {
+      "name": "mcserverlist-protocol",
+      "schemes": [
+        "mcsl"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "MinecraftServerList",
+        "repo": "MCServerListLauncher"
+      }
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^40.6.0",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.4.7",
+    "electron-store": "^7.0.2",
+    "prismarine-nbt": "^2.8.0"
+  }
+}
