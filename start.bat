@@ -1,0 +1,3 @@
+@echo off
+echo Starting MCServerList Launcher...
+npm start

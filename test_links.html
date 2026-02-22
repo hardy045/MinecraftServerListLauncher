@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol Test Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121214;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #1e1e22;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            color: #5865F2;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #5865F2;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+
+        .btn.secondary {
+            background: #23a559;
+        }
+
+        .btn.secondary:hover {
+            background: #1a7f45;
+        }
+
+        p {
+            color: #8e8e93;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Protocol Test Page</h1>
+        <p>Ensure your MCServerList Launcher is running (or installed) before clicking.</p>
+
+        <a href="mcsl://join?ip=play.hypixel.net&name=Hypixel" class="btn">Join Hypixel</a>
+        <br>
+        <a href="mcsl://join?ip=originmc.org&name=OriginMC" class="btn secondary">Join OriginMC</a>
+        <br>
+        <a href="mcsl://join?ip=127.0.0.1&port=25565&name=Local%20Test" class="btn" style="background: #eb459e;">Join
+            Localhost</a>
+
+        <p style="margin-top: 2rem;">Protocol: <code>mcsl://join?ip=[IP]&name=[NAME]</code></p>
+    </div>
+</body>
+
+</html>
